@@ -1,0 +1,2 @@
+Set-Alias edit notepad
+Set-Location C:\
