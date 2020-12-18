@@ -1,20 +1,22 @@
-## software windows 
+## software windows ( https://chocolatey.org/packages )
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+#restart powershell and run
 choco install choco-upgrade-all-at-startup -y
 
 #browser
 choco install opera
 choco install tor-browser
-choco install firefox -y
+choco install firefox
 choco install adblockplus-firefox 
-choco install googlechrome -y
-choco install adblockpluschrome -y
+choco install googlechrome
+choco install adblockpluschrome
 
 #tools
 choco install teamviewer
 choco install 7zip.install
 choco install notepadplusplus.install
-choco install keepass -y
+choco install keepass
 choco install ccleaner
 choco install ditto #start + v
 choco install f.lux #night light
@@ -46,7 +48,7 @@ choco install origin
 choco install telegram.install
 
 #office
-choco install adobereader -y
+choco install adobereader
 choco install adobereader-update
 choco install office365business
 choco install libreoffice-fresh
@@ -77,7 +79,7 @@ choco install itunes
 choco install gimp
 
 #runetime 
-choco install javaruntime -y
+choco install javaruntime
 choco install jdk8
 choco install flashplayeractivex
 choco install flashplayerppapi
