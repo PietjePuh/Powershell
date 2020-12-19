@@ -50,14 +50,9 @@ sudo openvpn /etc/openvpn/nl779.nordvpn.com.tcp443.ovpn
 sudo killall openvpn
 #	sudo nano /etc/openvpn/auth.txt
 	username * password 
-	jAdP7PLhRW38v1wfBuELZRyX
-	tu2jf5bLHdgnyMi8jeqzE9Mp
 sudo cp /etc/openvpn/au151.nordvpn.com.tcp443.ovpn /etc/openvpn/au151.conf
-
 sudo cp /etc/openvpn/nl779.nordvpn.com.tcp443.ovpn /etc/openvpn/a.conf
 nano /etc/openvpn/a.conf
-
-
 host myip.opendns.com resolver1.opendns.com
 
 ## transmission-daemon
