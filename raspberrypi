@@ -1,2 +1,91 @@
 apt-get update 
 apt-get upgrade
+
+Inhoud 1
+
+http://192.168.1.35:9091/transmission 
+http://192.168.1.15:32400/web/index.htm 
+http://192.168.1.15/admin/network.php 
+
+Startup
+# ssh pi@192.168.1.15
+password: raspberry
+# sudo su
+#passwd 
+typ het nieuwe wachtwoord 
+
+usefull: 
+apt-get update -y
+apt-get upgrade  -y
+reboot
+
+Mount de drive
+cat /proc/mounts
+#ssh server
+sudo apt install openssh-server
+sudo ufw allow ssh
+
+
+Programma's 
+https://pimylifeup.com/raspberry-pi-nextcloud-server/
+
+##pihole
+curl -sSL https://install.pi-hole.net | bash
+
+
+##plex
+sudo apt-get install apt-transport-https
+curl https://downloads.plex.tv/plex-keys/PlexSign.key | sudo apt-key add -
+echo deb https://downloads.plex.tv/repo/deb public main | sudo tee /etc/apt/sources.list.d/plexmediaserver.list
+sudo apt-get update
+sudo apt install plexmediaserver
+
+##	Nordvpn
+sudo apt-get install openvpn
+cd /etc/openvpn/
+sudo wget https://nordvpn.com/api/files/zip
+sudo unzip zip
+sudo openvpn file_name
+sudo openvpn /etc/openvpn/nl779.nordvpn.com.tcp443.ovpn
+sudo killall openvpn
+#	sudo nano /etc/openvpn/auth.txt
+	username * password 
+	jAdP7PLhRW38v1wfBuELZRyX
+	tu2jf5bLHdgnyMi8jeqzE9Mp
+sudo cp /etc/openvpn/au151.nordvpn.com.tcp443.ovpn /etc/openvpn/au151.conf
+
+sudo cp /etc/openvpn/nl779.nordvpn.com.tcp443.ovpn /etc/openvpn/a.conf
+nano /etc/openvpn/a.conf
+
+
+host myip.opendns.com resolver1.opendns.com
+
+## transmission-daemon
+
+sudo apt-get update && sudo apt-get install transmission-daemon
+sudo systemctl stop transmission-daemon
+# nano /etc/transmission-daemon/settings.json
+sudo systemctl start transmission-daemon
+
+
+
+
+As you can see, many options can be tweaked, however we are going to focus on the most important ones for us at the moment. The first line which should get our attention, is on Line 15, are download_dir. This is quite self explanatory: via this option we can setup the directory in which the files will be downloaded. The default destination is /var/lib/transmission-daemon/downloads: this directory will host both the complete and incomplete downloads.
+
+In case we want to differentiate them, and host the incomplete ones separately, we must set the incomplete-dir-enabled option to true on Line 24 The path in which the incomplete downloads will be stored is set via the incomplete-dir option, and by default is /var/lib/transmission-daemon/Downloads.
+
+The next, very important options we should change are rpc-password and rpc-username located respectively on Lines 51 and 54 of the configuration file. Using them, we can set the "login" data that will be used to access the transmission web interface: by default the value of both is "transmission". The value we see on rpc-password in the configuration file is the result of the hashing of the plain text password: we insert our password in the field, and it will be automatically hashed once the daemon starts. Be sure to change the defaults and use safe and possibly easy to remember values for these settings.
+
+Other options of great importance are rpc-port and rpc-url, set respectively to 9091 and /transmission/ on Lines 52 and 53. The former is the port that used to connect to the web interface, and the latter is the url used to reach the interface itself. It's quite safe to use the default values, and it's important to remember the port number, since we need to change the firewall so it will allow connections via this port.
+
+Speaking of ports, the default transmission peer-port is 51413, as defined on Line 32. Opening this port on the firewall (and allowing port forwarding in the router) is not strictly necessary for the applications to work correctly, however it is needed for it to work in active mode, and so to be able to connect to more peers.
+
+Finally, two other important options are rpc-whitelist and rpc-whitelist-enabled. When the latter is enabled, on Line 56 is possible to restrict the hosts from which the connection to the web interface will be allowed, by passing a list of comma-separated allowed IPs. Say for example we want to allow access from the host with the 192.168.1.40 Ip, all we would need to do is add the address to the whitelist:
+"rpc-whitelist": "127.0.0.1,192.168.1.40"
+Change the configuration as you like, then close and save the file. The next step is to configure the firewall.
+
+
+##
+sudo ufw allow 9091,51413/tcp
+sudo systemctl start transmission-daemon
+http://localhost:9091/transmission 
