@@ -5,3 +5,6 @@ Set-Location C:\temp
 Set-Alias edit notepad
 set-alias c clear
 set-alias h get-help
+
+Get-help  -full | more
+get-command   *user* or *-aduser
