@@ -1,5 +1,5 @@
 ﻿#var
-$domain = Read-Host "Website"
+$domain = Read-Host "webpage"
 #Install-Module -Name MxLookup 
 
 #function
