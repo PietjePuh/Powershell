@@ -1,0 +1,48 @@
+#usernamgement 
+### $user = Read-Host "Please enter SamAccountName"
+### $mail = Read-Host "FQDN"
+### $UPN  = Read-Host "domain\username"
+net user $user /domain
+net dom $user /domain
+Get-aduser $user
+unlock-adaccount -identity $user
+get-aduser $user -property MemberOf | % {$_.MemberOf | Get-AdGroup | select Name | sort name}
+Set-ADUser $user -extensionAttribute1 '+31'
+
+#group mangement
+### $group = 
+### $members = 
+get-adgroup -Filter "name -like '*adobe*'" -Properties * | select name
+Add-ADGroupMember -Identity $group -Members $members
+Get-ADGroupMember -identity “$group” | select name | Export-csv -path C:\temp\export.csv -NoTypeInformation
+
+##Member OFF 
+get-aduser $user -property MemberOf | % {$_.MemberOf | Get-AdGroup | select Name | sort name}
+
+#folder mangement
+Get-Acl -Path  \\server\  | Format-List
+net use h: \\server\folder  /persistent:yes 
+
+#file mangement
+Robocopy  %from% %to%
+
+#computer mangement 
+### $computer = 
+enter-pssession $computer
+get-volume \\%computername%\C$ 
+
+#printer
+Get-Service -ComputerName "$computer5" -Name spooler | Start-Service
+Add-Printer -ConnectionName \\computername\printername
+
+#network
+1..254 | ForEach-Object {Get-WmiObject Win32_PingStatus -Filter "Address='10.10.10.$_' and  Timeout=200 and ResolveAddressNames='true' and StatusCode=0" | select ProtocolAddress*}
+
+Exchange 2010
+Add-MailboxFolderPermission @:\Agenda -User "UPN name" –AccessRights Reviewer
+Add-MailboxFolderPermission -Identity user@domain:\agenda -User 0-Everyone -AccessRights reviewer
+
+get-mailbox "username" |  %{ Get-MailboxFolderPermission "$($_.alias):\agenda"}
+set-mailbox $mailbox -MessageCopyForSentAsEnabled $True
+set-mailbox $mailbox -MessageCopyForSendOnBehalfEnabled $True
+Set-Mailbox UPN  -Type:Regular
