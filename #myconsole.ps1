@@ -1,6 +1,5 @@
-$host.ui.RawUI.WindowTitle = "You got the power"
+$host.ui.RawUI.WindowTitle = "You got the power!!"
 Set-Location C:\temp
-
 
 #alias
 Set-Alias edit notepad
