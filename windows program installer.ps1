@@ -71,7 +71,7 @@ choco install telegram
 choco install vlc
 choco install kodi
 
-#muziek
+#music
 choco install spotify
 choco install itunes
 
