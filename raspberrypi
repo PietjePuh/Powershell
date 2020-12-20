@@ -6,6 +6,9 @@ Inhoud 1
 http://192.168.1.35:9091/transmission 
 http://192.168.1.15:32400/web/index.htm 
 http://192.168.1.15/admin/network.php 
+#Programs
+sudo apt-get install python3.6
+sudo apt-get install git
 
 Startup
 # ssh pi@192.168.1.15
