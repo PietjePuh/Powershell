@@ -1,0 +1,20 @@
+ssh pi@192.168.178.15
+
+#update 
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+#update all
+pihole -up
+
+#PI HOLE
+git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
+cd "Pi-hole/automated install/"
+sudo bash basic-install.sh
+https://github.com/pi-hole/pi-hole/#one-step-automated-install
+
+#DATABASE
+sudo apt install mongodb
+sudo systemctl enable mongodb
+sudo systemctl start mongodb
+mongo
