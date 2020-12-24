@@ -4,6 +4,14 @@ ssh pi@192.168.178.15
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
+#software
+apt-get install python
+apt-get install pip
+apt-get install git
+
+#software req
+pip install -r requirements.txt
+
 #update all
 pihole -up
 
