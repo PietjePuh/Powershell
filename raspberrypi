@@ -1,5 +1,31 @@
-apt-get update 
-apt-get upgrade
+ssh pi@192.168.178.15
+
+#update 
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+#software
+apt-get install python
+apt-get install pip
+apt-get install git
+
+#software req
+pip install -r requirements.txt
+
+#update all
+pihole -up
+
+#PI HOLE
+git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
+cd "Pi-hole/automated install/"
+sudo bash basic-install.sh
+https://github.com/pi-hole/pi-hole/#one-step-automated-install
+
+#DATABASE
+sudo apt install mongodb
+sudo systemctl enable mongodb
+sudo systemctl start mongodb
+mongo
 
 Inhoud 1
 
@@ -87,3 +113,5 @@ Change the configuration as you like, then close and save the file. The next ste
 sudo ufw allow 9091,51413/tcp
 sudo systemctl start transmission-daemon
 http://localhost:9091/transmission 
+
+
