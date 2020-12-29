@@ -16,6 +16,10 @@ get-adgroup -Filter "name -like '*adobe*'" -Properties * | select name
 Add-ADGroupMember -Identity $group -Members $members
 Get-ADGroupMember -identity “$group” | select name | Export-csv -path C:\temp\export.csv -NoTypeInformation
 
+#remove group management VPN verwijderen <download (UPN is maar tot 20 character !! ) 
+$user = Read-Host "Please enter SamAccountName"
+(Get-ADUser $user -properties memberof).memberof | % {IF ($_ -like "*VPN*") {Remove-ADGroupmember $_ $user -Confirm:$yes}} 
+
 ##Member OFF 
 get-aduser $user -property MemberOf | % {$_.MemberOf | Get-AdGroup | select Name | sort name}
 
