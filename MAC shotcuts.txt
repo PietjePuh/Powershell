@@ -1,115 +1,39 @@
 command-option-esc  force quit
-
-
  hold command-shift-option-escape for 4 sec  Force quit front-most application (without confirmation)
-
-
  control-eject  show shutdown dialog
-
-
  command-option-eject  sleep now
-
-
  command-shift-Q  log out
-
-
  command-shift-option-Q  log out without confirmation
-
-
  command-control-eject  restart
-
-
  control-shift-eject  sleep displays
-
-
  command-option-control-eject  shut down
-
-
  command-tab  cycle between open applications
-
-
  command-`  *after* having pressed command-tab, it will cycle between open applications in reverse
-
-
  command-shift-tab  cycle between open applications in reverse direction
-
-
  command-`  cycle between open windows in the selected application
-
-
  command-shift-`  cycle between open windows in the selected application in reverse direction
-
-
  control-F4  cycle between open windows in all applications
-
-
  control-shift-F4  cycle between open windows in all applications in reverse direction
-
-
  F8  Spaces (Leopard only)
-
-
  F9  Exposé for all windows (Panther and newer)
-
-
  F10  Exposé for all windows in selected application
-
-
  F11  Exposé to reveal desktop
-
-
  F12  Dashboard (Tiger and newer)
-
-
  control-#  Jump to a space (10.5+)
-
-
  control-arrow  Cycle through spaces (10.5+)
-
-
  command-space  activate Spotlight (Tiger) or switch between keyboard layouts (pre-Tiger systems)
-
-
  command-option-space  open a Spotlight search in a finder "Find" window
-
-
  shift-volume  Change volume without sound effect
-
-
  option-shift-volume  Fine-grained volume control (10.5+ ?)
-
-
  option-volume  Sound Preference Pane
-
-
  option-brightness  Display Preference Pane
-
-
  command-decrease-brightness  Change display mode (only on revised fn keyboard layout on Alu. keyboards, newer MBP/MBs?)
-
-
  opt-"Empty Trash"  Empty trash, including locked items, without any alerts
-
-
  command-escape  open front row (Press any F key (except F2) or Escape to exit)
-
-
  hold shift while performing action  slow down any animation (exposé, time machine, minimize, etc)
-
-
  option-drag scrollbar  smooth scrolling
-
-
  option-eject  Eject secondary optical media drive (if one exists)
-
-
  option-click dock icon or window  Switch to application and hide previous application
-
-
  command-option-click dock icon or window  Switch to application and hide all others
-
-
  command-drag menulet  re-order icon
-
-
  command-drag menulet off the menu bar  remove icon from menu bar
