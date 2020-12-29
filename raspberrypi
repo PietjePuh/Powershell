@@ -61,6 +61,11 @@ https://pimylifeup.com/raspberry-pi-nextcloud-server/
 ##pihole
 curl -sSL https://install.pi-hole.net | bash
 
+SickChill - SickChill is an automatic Video Library Manager for TV Shows.
+Radarr - A fork of Sonarr to work with movies à la Couchpotato.
+Tautulli - A Python based monitoring and tracking tool for Plex Media Server.
+Ombi - Want a Movie or TV Show on Plex or Emby? Use Ombi!
+Lidarr - Looks and smells like Sonarr but made for music.
 
 ##plex
 sudo apt-get install apt-transport-https
