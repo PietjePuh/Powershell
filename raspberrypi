@@ -120,3 +120,13 @@ sudo systemctl start transmission-daemon
 http://localhost:9091/transmission 
 
 
+
+#tips
+unbound (Recommended)
+OpenVPN (Recommended)
+PiVPN.
+Homeassistant, Sickrage, Couchpotato, Owncloud, ddclient, ombi.
+Plex, samba, pyload, and nginx.
+OpenVPN and Nextcloud.
+ddclient, PiVPN, and nginx.
+Syncthing, Dokuwiki, NTP, Seafile, and Node-Red.
