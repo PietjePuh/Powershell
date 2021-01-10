@@ -1,8 +1,33 @@
 ## software windows ( https://chocolatey.org/packages )
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/debloat'))
 
 #restart powershell and run
 choco install choco-upgrade-all-at-startup -y
+#default
+choco install firefox -y
+choco install googlechrome -y
+choco install tor-browser
+
+choco install teamviewer -y
+choco install 7zip.install -y
+choco install notepadplusplus.install -y
+choco install keepass -y
+
+choco install geforce-experience -y
+choco install discord -y
+choco install steam -y
+
+choco install whatsapp -y
+choco install spotify -y
+choco install telegram -y
+choco install adobereader -y
+
+choco install google-drive-file-stream -y
+choco install citrix-workspace -y
+choco install mobaxterm -y
+choco install autohotkey.portable -y
+
 
 #browser
 choco install opera
@@ -45,7 +70,6 @@ choco install steam
 choco install epicgameslauncher
 choco install uplay
 choco install origin
-choco install telegram.install
 
 #office
 choco install adobereader
@@ -55,6 +79,7 @@ choco install libreoffice-fresh
 choco install openoffice
 
 #work
+choco install google-drive-file-stream
 choco install citrix-receiver
 choco install citrix-workspace
 choco install mremoteng
@@ -74,6 +99,7 @@ choco install kodi
 #music
 choco install spotify
 choco install itunes
+choco install audacity
 
 #picture
 choco install gimp
