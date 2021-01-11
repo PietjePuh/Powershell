@@ -27,7 +27,8 @@ choco install google-drive-file-stream -y
 choco install citrix-workspace -y
 choco install mobaxterm -y
 choco install autohotkey -y
-choco install greenshot
+choco install greenshot -y
+https://dynamictelecom.nl/telefonie/apps-en-software/i-am/
 
 
 #browser
