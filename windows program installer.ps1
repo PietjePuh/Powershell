@@ -26,7 +26,8 @@ choco install adobereader -y
 choco install google-drive-file-stream -y
 choco install citrix-workspace -y
 choco install mobaxterm -y
-choco install autohotkey.portable -y
+choco install autohotkey -y
+choco install greenshot
 
 
 #browser
@@ -43,6 +44,7 @@ choco install 7zip.install
 choco install notepadplusplus.install
 choco install keepass
 choco install ccleaner
+choco install greenshot
 choco install ditto #start + v
 choco install f.lux #night light
 choco install greenshot #start+shift+S
