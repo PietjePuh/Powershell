@@ -106,6 +106,7 @@ choco install audacity
 
 #picture
 choco install gimp
+choco install cura-new
 
 #runetime 
 choco install javaruntime
