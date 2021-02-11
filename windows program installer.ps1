@@ -1,3 +1,7 @@
+Windows repair
+sfc /scannow
+DISM /Online /Cleanup-Image /RestoreHealth
+
 ## software windows ( https://chocolatey.org/packages )
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/debloat'))
